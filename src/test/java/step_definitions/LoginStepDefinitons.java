@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,7 +13,7 @@ import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 
-public class LoginStepDefiniton {
+public class LoginStepDefinitons {
 
 	WebDriver driver;
 
@@ -30,10 +31,11 @@ public class LoginStepDefiniton {
 		Assert.assertEquals("Free CRM software in the cloud powers sales and customer service", title);
 	}
 
-	@Then("user enters username and password")
-	public void user_enters_username_and_password() {
-		driver.findElement(By.name("username")).sendKeys("yumukhov");
-		driver.findElement(By.name("password")).sendKeys("123456");
+	// @Then("user enters \"(.*)\" and \"(.*)\"$")
+	@Then("user enters {string} and {string}") // this line and above line, botk works
+	public void user_enters_and(String username, String password) {
+		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
 
 	}
 
@@ -49,6 +51,28 @@ public class LoginStepDefiniton {
 		String title = driver.getTitle();
 		System.out.println("Home page title: " + title);
 		Assert.assertEquals("CRMPRO", title);
+	}
+	
+	@Then("user clicks on New Contatc")
+	public void user_clicks_on_New_Contatc() {
+		driver.switchTo().frame("mainpanel");
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"))).build().perform();
+		driver.findElement(By.xpath("//a[contains(text(),'New Contact')]")).click();
+	}
+
+	@Then("user enters {string} and {string} and {string}")
+	public void user_enters_and_and(String firstname, String lastname, String position) {
+		driver.findElement(By.id("first_name")).sendKeys(firstname);
+		driver.findElement(By.id("surname")).sendKeys(lastname);
+		driver.findElement(By.id("company_position")).sendKeys(position);
+		driver.findElement(By.xpath("//input[@type='submit' and @value='Save']")).click();
+
+	}
+	
+	@Then("user closes the browser") 
+	public void user_closes_the_browser () {
+		driver.quit();
 	}
 
 }
