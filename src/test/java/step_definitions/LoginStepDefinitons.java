@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -16,6 +18,17 @@ import org.junit.Assert;
 public class LoginStepDefinitons {
 
 	WebDriver driver;
+	
+	@Before
+	public void setUp() {
+		System.out.println("Launch driver");
+		System.out.println("get url");
+	}
+	
+	@After
+	public void tearDown() {
+		System.out.println("close browser.");
+	}
 
 	@Given("user is already on Login Page")
 	public void user_is_already_on_Login_Page() {

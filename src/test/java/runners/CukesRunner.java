@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-	features = "src/test/resources/com/freecrm/features/new_contacts.feature", 	
+	features = "src/test/resources/com/freecrm/features/login.feature", 	
 	glue = "step_definitions", //this should be the package name of step classes
 	monochrome = true, ////display the console output in a proper readable format
 	plugin = {"pretty","html:test-outout", "json:json_output/cucumber.json", "junit:junit_xml/cucumber.xml"}, //to generate different types of reporting
@@ -18,4 +18,3 @@ import cucumber.api.junit.Cucumber;
 public class CukesRunner { 
 
 }
-

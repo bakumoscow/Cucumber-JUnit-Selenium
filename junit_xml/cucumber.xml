@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="31.15395">
-<testcase classname="Free CRM Create Contatcs" name="Free CRM Create a New Contact Scenario" time="17.180521">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="21.462463">
+<testcase classname="Free CRM Login Functionality" name="Free CRM Login Test Scenario" time="14.795924">
 <system-out><![CDATA[Given user is already on Login Page.........................................passed
 When title of Login Page is Free CRM........................................passed
 Then user enters "yumukhov" and "123456"....................................passed
 Then user clicks on Login button............................................passed
 Then user is on Home Page...................................................passed
-Then user clicks on New Contatc.............................................passed
-Then user enters "Tom" and "Peter" and "engineer"...........................passed
-Then user closes the browser................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Free CRM Create Contatcs" name="Free CRM Create a New Contact Scenario 2" time="13.973429">
+<testcase classname="Free CRM Login Functionality" name="Free CRM Login Test Scenario 2" time="6.666539">
 <system-out><![CDATA[Given user is already on Login Page.........................................passed
 When title of Login Page is Free CRM........................................passed
 Then user enters "yumukhov" and "123456"....................................passed
 Then user clicks on Login button............................................passed
 Then user is on Home Page...................................................passed
-Then user clicks on New Contatc.............................................passed
-Then user enters "Baran" and "Coban" and "qoyun"............................passed
-Then user closes the browser................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
